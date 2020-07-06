@@ -1,0 +1,14 @@
+<h2><%= link_to "Ask me any question", ask_path %></h2>
+
+<ol>
+  <% @answers.each do|answer| %>
+    <li><%= answer %></li>
+    <% if answer.end_with?("?") %>
+      <%= "Silly question, get dressed and go to work!" %>
+    <% elsif answer.downcase == "i am going to work right now" %>
+      <%= "Great!" %>
+    <% else %>
+      <%= "I don't care, get dressed and go to work!" %>
+    <% end %>
+  <% end %>
+</ol>
